@@ -1,0 +1,8 @@
+@startuml
+User -> "Front" : Remplit formulaire d'inscription
+Front -> "Back" : Envoie les infos
+Back -> "BDD" : Envoie les infos
+BDD -> "Back" : Retourne le resultat
+Back -> "Front" : Confirme l'infos ou renvoie une erreur
+Front -> "User" : Affiche le message de conf ou une erreur
+@enduml
