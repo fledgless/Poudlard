@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+actor "ADMIN" as a
+package UTILISATEUR {
+actor "PROF" as p
+actor "ELEVE" as e
+actor "USER"as u
+}
+package  SITE_WEB_ECOLE {
+usecase "creer un profile" as uc1 
+usecase "Supprimer un profile" as uc10 
+usecase "Visiter le site" as uc2
+usecase "Gerer les ROLES" as uc3 
+usecase "Consulter les notes" as uc4
+usecase "Mettre des notes" as uc5
+usecase "Se connecter" as uc6
+usecase "Passer une commande" as uc7
+usecase "Mettre a jours le profil" as uc8
+usecase "ajouter une photo" as uc18
+usecase "ADMINISTRER LE SITE" as uc9
+}
+
+
+u-->uc2
+u-->uc7
+e-->uc4
+e-->uc1
+e-->uc8
+e-->uc18
+p-->uc5
+a-->uc3
+a-->uc9
+a-->uc10
+a--uc5
+uc3.>uc6:include 
+uc4.>uc6:include 
+uc5.>uc6:include 
+uc8.>uc6:include 
+uc10.>uc6:inculde
+
+u<|--e
+e<|--p
+p<|--a
+
+@enduml 
