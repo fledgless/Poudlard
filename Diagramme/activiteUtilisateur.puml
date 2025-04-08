@@ -17,7 +17,7 @@
         repeat:remplis le formulaire;
         |Serveur|
         repeat while (information deja utiliser ) is (oui) not (non)
-    :creation du compte;
+        :creation du compte;
         end
 
 @enduml
