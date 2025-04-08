@@ -1,0 +1,34 @@
+@startuml
+start
+:Accueil;
+if (Choisir une page) then (Maison)
+    :Page Maison;
+    stop
+else if (Boutique)
+    :Page Boutique;
+        if (Choisir une action) then (Commande)
+            :Page Commande;
+            stop
+        else if (Paiement)
+            :Page Paiement;
+            stop
+        endif
+    stop
+else if (Cours)
+    :Page Cours;
+    stop
+else if (Ecole)
+    :Page Ecole;
+    stop
+else if (Mon Compte)
+    :Page Mon Compte;
+    stop
+else if (Intranet)
+    :Page Intranet;
+    stop
+else if (Professeur)
+    :Page Professeur;
+    stop
+endif
+
+@enduml
