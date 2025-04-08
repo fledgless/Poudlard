@@ -1,0 +1,125 @@
+@startuml
+
+' Déclaration des classes abstraites et des utilisateurs
+abstract class Utilisateur {
+   
+    - nom : string
+    - email : string
+    - motDePasse : string
+    + seConnecter() : void
+    + sInscrire() : void
+}
+
+class Eleve {
+    - photo: binary
+    - anneeEtude : int
+    - notes : array
+    - conatctParent: string
+    + consulterNotes() : void
+}
+
+class Professeur {
+    - photo: binary
+    - biographie : string
+    - nom: string
+    - experience : string
+    - matiereEnseignee : string
+    + attribuerNotes() : void
+    + ajouterObservations() : void
+}
+
+class Admin {
+    + gererProfesseurs() : void
+    + gererEleves() : void
+    + gererComptes() : void
+     + gererArticles() : void
+}
+
+' Relations entre les classes Utilisateur et ses sous-classes
+Utilisateur <|-- Eleve
+Utilisateur <|-- Professeur
+Utilisateur <|-- Admin
+
+' Classe Maison
+class Maison {
+    - nom : string
+    - sigle : string
+    - directeurMaison : Professeur
+    - prefetMaison : Eleve
+}
+
+' Relation entre Maison et Eleve
+Maison "1" --> "*" Eleve : "contient"
+Maison "1" --> "1" Professeur : "dirigée par"
+Maison "1" --> "1" Eleve : "préfecture assurée par"
+
+' Classe Matiere
+class Matiere {
+    - id : int
+    - horaire : string
+    - nom : string
+    - description : string
+    - niveau : int
+}
+
+' Un élève a plusieurs matières selon son année d'étude
+Eleve "1" --> "*" Matiere : "suit selon année"
+
+' Un professeur enseigne une seule matière
+Professeur "1" --> "1" Matiere : "enseigne"
+
+' Classe Cours
+class Cours {
+    - nom : string
+    - professeur : string
+    - horaire : string
+    + afficherProgramme() : void
+}
+' Un élève a plusieurs Cours selon son année d'étude
+Eleve "1" --> "*" Cours : "suit "
+
+
+' Un professeur dispense plusieurs Cours
+Professeur "1" --> "*" Cours : "dispense"
+
+' Classe Boutique
+class Article {
+    - nom : string
+    - description : string
+    - prix : double
+}
+
+class Commande {
+    - id : int
+    - date : string 
+    - statut : string
+    + passerCommande() : void
+    + payer() : void
+}
+
+
+' Relation entre Article et Commande
+Article "1" --> "*" Commande : "ajouté à"
+
+' Intranet Élève et Professeur
+class IntranetEleve {
+    - tableauNotes : array
+    - moyenneGénérale : double
+    + consulterNotes() : void
+}
+
+class IntranetProfesseur {
+    - listeEleves : array
+    + attribuerNotes() : void
+    + ajouterObservations() : void
+}
+
+' Relation entre Eleve et IntranetEleve
+Eleve "1" --> "1" IntranetEleve : "accède à"
+
+' Relation entre Professeur et IntranetProfesseur
+Professeur "1" --> "1" IntranetProfesseur : "accède à"
+
+
+
+@enduml
