@@ -1,0 +1,11 @@
+@startuml sequence
+title Diagramme de séquence : Connexion
+skinparam sequenceMessageAlign center
+User -> Front : Remplit formulaire de connexion
+Front -> Back : Envoie les infos
+Back -> BDD : Vérifie si les infos existent
+BDD -> Back : Retourne le résultat
+Back -> Front : Confirme l'info ou renvoie une erreur
+Front -> User : Affiche le message de confirmation ou d'erreur
+
+@enduml
