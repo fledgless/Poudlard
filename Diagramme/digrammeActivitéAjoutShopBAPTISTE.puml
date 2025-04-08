@@ -1,0 +1,25 @@
+@startuml
+title Diagramme d'activité Créer un produit
+|Admin|
+start
+:Clique sur le bouton de Admin Dashboard;
+|Serveur web|
+:Vérifie si l utilisateur est connecté en tant qu admin;
+if (est admin ?) then (oui)
+    |Admin|
+    :Affiche le tableau de bord de l admin;
+    :Ajoute un produit;
+    repeat
+        :Rempli le formulaire;
+        |Serveur web|
+        :Vérifie les informations;
+    repeat while (Les informations sont correctes?) is (non) not (oui)
+    |Admin|
+    :Valide le formulaire;
+    stop
+else (non)
+    |Admin|
+    :Message d erreur;
+    stop
+endif
+@enduml
