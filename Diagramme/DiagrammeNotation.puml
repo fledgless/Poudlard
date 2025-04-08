@@ -1,0 +1,19 @@
+@startuml notes
+title Notations des professeurs  
+start
+:prof connecté;
+:panel des professeurs;
+:onglets des éléves;
+:choisie un éléve;
+fork
+  :John Jones;
+fork again
+  :Marie Louise;
+end fork {or}
+:rentre une note;
+:valide;
+:enregistrés dans la BDD;
+end
+@enduml
+
+
