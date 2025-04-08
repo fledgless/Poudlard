@@ -1,8 +1,0 @@
-@startuml 'Premiere connexion'
-
-start
-:visite le site;
-if(il a une compte)then (oui)
- :se (connecte)
-
-@enduml

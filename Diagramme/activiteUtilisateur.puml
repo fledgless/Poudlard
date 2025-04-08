@@ -1,0 +1,23 @@
+@startuml title Connexion
+ |Utilisateur|
+    start
+    :visite le site;
+        if( deja un compte?)then (oui)
+            :se connecte;
+            repeat : taper mdp et nom d utilisateur ; 
+            |Serveur|
+                repeat while (info correct) is (non) not (oui)
+                |Utilisateur|
+                :acces intranet;
+                stop           
+        else (non)
+        if (creer un compte)then (non)
+        stop
+        else(oui)
+        repeat:remplis le formulaire;
+        |Serveur|
+        repeat while (information deja utiliser ) is (oui) not (non)
+    :creation du compte;
+        end
+
+@enduml
