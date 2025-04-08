@@ -1,0 +1,43 @@
+@startuml Diagmodif
+title Diagramme de séquence : Modifier un article (Admin)
+
+|Admin|
+start
+:Clique sur le panel Admin;
+|#AntiqueWhite|Serveur WEB|
+if (Vérifie le rôle Admin) is (si non) then
+  |Admin|
+  #red:**Envoi message d'erreur : accès refusé**;
+  stop
+else (si oui)
+  :Connecte en tant qu'Admin;
+  |Admin|
+  :Affiche le panel Admin;
+  :Clique sur Modifier un article;
+  |Serveur WEB|
+  :Envoi la requête en BDD;
+  :L'article existe ?;
+  if () is (Article non trouvé) then
+    |Admin|
+    #red:**Envoi message d'erreur : article introuvable**;
+    stop
+  else (Article trouvé)
+    |Serveur WEB|
+    :Récupère les données de l'article;
+    |Admin|
+    :Affiche le formulaire de modification;
+    :Saisit les nouvelles données;
+    |Serveur WEB|
+    :Valide les données saisies;
+    if () is (Données invalides) then
+      |Admin|
+      #red:**Affiche message d'erreur : champs invalides**;
+      stop
+    else (Données valides)
+      |Serveur WEB|
+      :Modifie l'article en BDD;
+      |Admin|
+      :Affiche message : article modifié avec succès;
+      stop
+
+      @enduml

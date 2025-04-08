@@ -1,0 +1,35 @@
+@startuml Diagconnexion
+title Diagramme de séquence : Supprimer un article (Admin)
+|Admin|
+start
+:Clique sur le panel Admin;
+|#AntiqueWhite|Serveur WEB|
+if (Vérifie le rôle Admin)is (si non) then
+  |Admin|
+  #red:**Envoi message d'erreur : accès refusé**;
+  stop
+  |Serveur WEB|
+else (Si oui)
+  :Connecte en tant qu'Admin;
+  |Admin|
+  :Affiche le panel Admin;
+  :Clique sur supprimer un article;
+  |Serveur WEB|
+  :Envoi la requête en BDD;
+  if () is (si non) then
+    |Admin|
+    #red:**Envoi message d'erreur : Erreur lors de la suppression**;
+    stop
+  else (si oui)
+    |Serveur WEB|
+    :Demande de confirmation;
+    |Admin|
+    :Affiche message : Confirmer la suppression ?;
+    :L'admin confirme la suppression;
+    |Serveur WEB|
+    :supprime l'article en BDD;
+    |Admin|
+    :Affiche message : L'article a bien été supprimé;
+    stop
+
+    @enduml
