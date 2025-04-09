@@ -1,0 +1,30 @@
+@startuml userstoriecours
+
+left to right direction 
+
+actor user as U
+
+skinparam ActorFontStyle bold 
+
+skinparam usecase {
+    BackgroundColor Yellow
+    BorderColor Black
+
+}
+package "Navigation Cours" {
+
+    usecase "liste Cours" as lc
+    usecase "Detail" as d
+
+}
+
+U --> lc
+U --> d
+
+note right of lc 
+En tant que user je consulte la liste des cours
+end note
+
+note right of d 
+En tant que user je consulte les details des cours
+end note 
