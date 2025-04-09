@@ -1,45 +1,121 @@
-@startuml
+@startuml Moeusercase
+
 left to right direction
-actor "ADMIN" as a
-package UTILISATEUR {
-actor "PROF" as p
-actor "ELEVE" as e
-actor "USER"as u
+
+
+package Ecole {
+    actor Eleve  as E #LightBlue;text:LightBlue
+    actor Admin  as A #Red;text:Red
+    actor Prof  as P #Green;text:Green
 }
-package  SITE_WEB_ECOLE {
-usecase "creer un profile" as uc1 
-usecase "Supprimer un profile" as uc10 
-usecase "Visiter le site" as uc2
-usecase "Gerer les ROLES" as uc3 
-usecase "Consulter les notes" as uc4
-usecase "Mettre des notes" as uc5
-usecase "Se connecter" as uc6
-usecase "Passer une commande" as uc7
-usecase "Mettre a jours le profil" as uc8
-usecase "ajouter une photo" as uc18
-usecase "ADMINISTRER LE SITE" as uc9
+actor user  as U #Pink;text:Pink
+
+package Site {
+    usecase "Acceuil" as UC1 #Pink
+    usecase "inscription" as UCI #Pink
+    usecase "connexion" as UCC #Pink
+    usecase "Cours" as UC3 #Pink
+    usecase "Intranet" as UC4 #LightBlue
+    usecase "Page Prof" as UC5 #Pink
+    usecase "Detail Prof" as UCDP #Pink
+    usecase "Boutique" as UC6 #Pink
+    usecase "Maison" as UC7 #Pink
+
+    usecase "modifier Information" as UC8 #LightBlue
+    usecase "Add Information" as UC8A #LightBlue
+    usecase "Supr Information" as UC8S #LightBlue
+    usecase "modifier cours" as UC9 #Red;text:White
+    usecase "Add cours" as UC9A #Red;text:White
+    usecase "Supr cours" as UC9S #Red;text:White
+    usecase "Detail Cours" as UC10 #Pink
+    usecase "Modifier note/com eleve" as UC11 #Green
+    usecase "Add note/com eleve" as UC11A #Green
+    usecase "Supr note/com eleve" as UC11S #Green
+    usecase "lire note/com eleve" as UC12 #LightBlue
+    usecase "Form commande" as UC14 #Pink
+    usecase "Form payer" as UC15 #Pink
+
+
+    usecase "Modifier article" as UC16 #Red;text:White
+    usecase "Add article" as UC16A #Red;text:White
+    usecase "Supr article" as UC16S #Red;text:White
+    usecase "Supr compte" as UC17S #Red;text:White
+    usecase "Modifier Prof" as UCMP #Red;text:White
+    usecase "Add Prof" as UCMPA #Red;text:White
+    usecase "Supr Prof" as UCMPS #Red;text:White
+    usecase "Modifier Maison" as UCMM #Red;text:White
+    usecase "Add Maison" as UCMMA #Red;text:White
+    usecase "Supr Maison" as UCMMS #Red;text:White
+    usecase "Modif Form Paiment" as UCMFP #Red;text:White
+    usecase "Add Form Paiment" as UCAFP #Red;text:White
+    usecase "Supr Form Paiment" as UCSFP #Red;text:White
+    usecase "Modif Form Commande" as UCMFC #Red;text:White
+    usecase "Add Form Commande" as UCAFC #Red;text:White
+    usecase "Supr Form Commande" as UCSFC #Red;text:White
+
+    usecase "Modifier role" as UCRM #Red;text:White
+    usecase "Ajouter role" as UCRA #Red;text:White
+    usecase "Supr role" as UCRS #Red;text:White
+
+
+
+
+
+
+
+
+
+
 }
 
+U --> UC1
+U --> UC3
+U --> UC10
+U --> UC5
+U --> UCDP
+U --> UC7
+U --> UC6
+U --> UC14
+U --> UC15
+U --> UCI
+U --> UCC
 
-u-->uc2
-u-->uc7
-e-->uc4
-e-->uc1
-e-->uc8
-e-->uc18
-p-->uc5
-a-->uc3
-a-->uc9
-a-->uc10
-a--uc5
-uc3.>uc6:include 
-uc4.>uc6:include 
-uc5.>uc6:include 
-uc8.>uc6:include 
-uc10.>uc6:inculde
+E --> UC4
+E --> UC8
+E --> UC8A
+E --> UC8S
+E --> UC12
 
-u<|--e
-e<|--p
-p<|--a
+P --> UC11
+P --> UC11A
+P --> UC11S
 
-@enduml 
+A --> UC16
+A --> UC16A
+A --> UC16S
+A --> UC17S
+A --> UC9
+A --> UC9A
+A --> UC9S
+A --> UCMP
+A --> UCMPA
+A --> UCMPS
+A --> UCMM
+A --> UCMMA
+A --> UCMMS
+A --> UCMFP
+A --> UCAFP
+A -->UCSFP
+A -->UCMFC
+A -->UCAFC
+A -->UCSFC
+A --> UCRM
+A --> UCRA
+A --> UCRS
+
+
+
+
+
+
+@enduml
