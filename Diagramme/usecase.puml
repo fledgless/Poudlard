@@ -59,13 +59,6 @@ package Site {
 
 
 
-
-
-
-
-
-
-
 }
 
 U --> UC1
@@ -113,9 +106,39 @@ A --> UCRM
 A --> UCRA
 A --> UCRS
 
+UC8 ..> UCC : include
+UC8A ..> UCC : include
+UC8S ..> UCC : include 
+UC12 ..> UCC : include 
+UC4 ..> UCC : include 
+UC11A ..> UCC : include 
+UC11  ..> UCC : include 
+UC11S ..> UCC : include
+UC16  ..> UCC : include 
+UC16S ..> UCC : include 
+UC16A ..> UCC : include 
+UC9 ..> UCC : include
+UC9A ..> UCC : include 
+UC9S ..> UCC : include  
+UC17S ..> UCC : include 
+UCMP ..> UCC : include 
+UCMPS ..> UCC : include 
+UCMPA ..> UCC : include 
+UCMM ..> UCC : include 
+UCMMA ..> UCC : include 
+UCMMS ..> UCC : include 
+UCMFP ..> UCC : include 
+UCAFP ..> UCC : include 
+UCSFP ..> UCC : include 
+UCMFC ..> UCC : include 
+UCAFC ..> UCC : include 
+UCSFC ..> UCC : include
+UCRM ..> UCC : include 
+UCRA ..> UCC : include 
+UCRS ..> UCC : include  
 
-
-
-
+E -|> U : herite
+P -|> E : herite
+A -|> P : herite 
 
 @enduml
