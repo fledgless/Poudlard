@@ -1,0 +1,23 @@
+@startuml activité prof
+Title "Diagramme d'activité créer un prof"
+|Admin|
+start
+:connexion clic sur le bouton admin dashboard;
+|serveurWeb|
+if (verifie si l'utilisateur est connecte en tant qu'admin) is (non) then (oui)
+else
+:message d'erreur;
+stop
+endif
+|Admin|
+:On affiche le tabaleau de bord de l'admin;
+:Ajoute un professeur;
+repeat
+:rempli le formulaire;
+|serveurWeb|
+:Verifie les informations;
+repeat while (les informations sont corrects?) is (non) not (oui)
+|Admin|
+:valide le formulaire;
+stop
+@enduml
