@@ -1,4 +1,4 @@
-@startuml
+@startuml FDFD
 title Diagramme d'activité Créer un produit
 |Admin|
 start
