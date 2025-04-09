@@ -1,0 +1,22 @@
+@startuml
+
+left to right direction
+actor "admin" as A
+rectangle SITE {
+  usecase "Gerer les Droits" as uc1
+  usecase "gerer le contenue" as uc2
+  
+}
+
+A -->uc1
+A-->uc2
+
+note right of (uc1)
+en tant qu'admin je veux pouvoir gerer les compte
+end note
+note right of (uc2)
+en tant qu'administrateur je veux gerer le contenus des pages
+end note
+
+
+@enduml
