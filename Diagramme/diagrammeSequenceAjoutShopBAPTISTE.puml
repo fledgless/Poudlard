@@ -1,9 +1,0 @@
-@startuml
-Admin -> "Front" : L'admin ajoute des produits
-Front -> "Back" : Envoie les informations des différents produits
-Back -> "BDD" : insère les produits en BDD
-BDD -> "Back" : mettre à jour les produits disponible
-Back -> "Front" : envoie les données des produits
-Front -> "Admin" : Affiche les produits disponibles
-
-@enduml
