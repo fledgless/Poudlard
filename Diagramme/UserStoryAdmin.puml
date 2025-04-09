@@ -1,4 +1,4 @@
-@startuml
+@startuml admin gestion page
 
 left to right direction
 actor "admin" as A
