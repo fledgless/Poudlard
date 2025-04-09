@@ -1,19 +1,25 @@
 @startuml notes
 title Notations des professeurs  
+|Prof|
 start
-:prof connecté;
+:Clic sur l intranet;
+|Serveur|
+if (Verifie  si user est connecté en tant que prof) is (non) then (oui)
+else
+:Message d erreur;
+stop
+endif
+|Prof|
 :panel des professeurs;
 :onglets des éléves;
 :choisie un éléve;
-fork
-  :John Jones;
-fork again
-  :Marie Louise;
-end fork {or}
-:rentre une note;
-:valide;
-:enregistrés dans la BDD;
+:ajouter une note;
+repeat
+:remplie le formulaire;
+|Serveur|
+:verifie les infos;
+repeat while (Les infos sont correct?) is (non) not (oui)
+|Prof|
+:valider;
 end
 @enduml
-
-
