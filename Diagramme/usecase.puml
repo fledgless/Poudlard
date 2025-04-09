@@ -1,7 +1,7 @@
 @startuml Moeusercase
-
 left to right direction
-
+skinparam actorStyle awesome
+title UseCase Poudlard
 
 package Ecole {
     actor Eleve  as E #LightBlue;text:LightBlue
