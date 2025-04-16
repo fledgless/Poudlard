@@ -1,0 +1,8 @@
+{
+"database" :"poudlard",
+"username" :"root",
+"password" :"admin",
+"host" : "localhost",
+"port" :3000,
+"SECRET": "poudlard"
+}
