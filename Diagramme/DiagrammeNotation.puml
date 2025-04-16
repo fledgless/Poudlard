@@ -1,12 +1,15 @@
 @startuml notes
 title Notations des professeurs  
 |Prof|
+'on indique le point de demarrage du diagramme
 start
 :Clic sur l intranet;
 |Serveur|
+' on donne une condition pour le diagramme
 if (Verifie  si user est connecté en tant que prof) is (non) then (oui)
 else
-:Message d erreur;
+|Prof|
+    #red: **Message d erreur**;
 stop
 endif
 |Prof|
@@ -18,6 +21,7 @@ repeat
 :remplie le formulaire;
 |Serveur|
 :verifie les infos;
+'on indique une condition qui peut se repeter
 repeat while (Les infos sont correct?) is (non) not (oui)
 |Prof|
 :valider;

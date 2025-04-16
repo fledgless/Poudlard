@@ -1,0 +1,26 @@
+@startuml TableZen
+
+left to right direction
+
+node "Serveur" as s #Red/Orange{
+    component "Apache" as Ap #LightGreen
+    component "Express" as Php  #LightGreen
+    artifact "VueJS" as Sy #LightGreen
+
+}
+node "Client" as c #LightBlue-LightGreen {
+    component "Navigateur" as n #LightBlue
+}
+node "Messagerie" as m #Red|White {
+    component "Client Mail" as CM #LightBlue
+}
+node "basse de données" as bd #Orange\White {
+    component "MySql" as MySql #LightBlue
+}
+c -- s : HTTPS
+bd -- s : TCP
+m -- s : SMTP
+Ap <.. Php
+Php <.. Sy
+
+@enduml
