@@ -1,15 +1,23 @@
-@startuml Moeusercase
+@startuml UseCase
+' indique que le diagramme est afficher de la gauche vers la droite
 left to right direction
+' skinparam signifie que l'on va changer le style de la police ici nous changeons le style du user
 skinparam actorStyle awesome
+' title permet de donner un titre au diagramme
 title UseCase Poudlard
 
+'package ecole permet de regrouper les acteurs qui sont dans le meme package
+'on declare donc l'acteur on lui donne un alias et on lui donne une couleur
 package Ecole {
     actor Eleve  as E #LightBlue;text:LightBlue
     actor Admin  as A #Red;text:Red
     actor Prof  as P #Green;text:Green
 }
+'actor user et en dehors du package école car il n'est pas un acteur de l'école
 actor user  as U #Pink;text:Pink
 
+'package site permet de regrouper les usecase qui sont dans le meme package
+'On declare chaque usecase avec un nom, un alias et une couleur
 package Site {
     usecase "Acceuil" as UC1 #Pink
     usecase "inscription" as UCI #Pink
@@ -61,6 +69,7 @@ package Site {
 
 }
 
+'on declare les relations entre les acteurs et les usecase
 U --> UC1
 U --> UC3
 U --> UC10
@@ -106,6 +115,7 @@ A --> UCRM
 A --> UCRA
 A --> UCRS
 
+'On declare les relations entre les usecase qui inclus le usecase connexion
 UC8 ..> UCC : include
 UC8A ..> UCC : include
 UC8S ..> UCC : include 
@@ -137,6 +147,7 @@ UCRM ..> UCC : include
 UCRA ..> UCC : include 
 UCRS ..> UCC : include  
 
+'On declare les heritages entre les différents acteurs
 E -|> U : herite
 P -|> E : herite
 A -|> P : herite 

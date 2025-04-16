@@ -1,26 +1,29 @@
 @startuml userstoriecours
-
+' indique la direction de gauche à droite
 left to right direction 
-
+'on donne un alias à l'actor cela permettra de simplifier son appel
 actor user as U
-
+'Skinparam permet de personnaliser le diagramme
 skinparam ActorFontStyle bold 
-
+'skinparam de usercase permet de definir un style au usecase
 skinparam usecase {
     BackgroundColor Yellow
     BorderColor Black
 
 }
+'package permet de regrouper les usecase
 package "Navigation Cours" {
 
     usecase "liste Cours" as lc
     usecase "Detail" as d
 
 }
-
+' cela indique que l'actor user est relié au usecase liste des cours
 U --> lc
+' cela indique que l'actor user est relié au usecase details
 U --> d
 
+' cela indique qu'une note est reliée à un usecase
 note right of lc 
 En tant que user je consulte la liste des cours
 end note
