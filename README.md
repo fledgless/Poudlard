@@ -47,8 +47,41 @@ Notre application comportera differentes pages :
 
 ## II. La conception :
 
-Mise en place des principaux diagrammes pour architecturer l'application,aprés reunion avec le client il a été vu de passer a la phase de developpenent.
+Afin d'architecturer l'application nous avons créé les principaux diagrammes :
+
+- Diagramme d'Activité
+- Diagramme de deploiement
+- Diagramme de sequence
+- User Story
+- Uses Case  
+  et suite a la reunion avec le client nous avons decidé de passer a la phase de developpement.
 
 ## III. Le Développement :
+
+# Prèrequis
+
+- installation de node :
+
+```bash
+ npm install -y nodejs
+```
+
+- intallation de npm
+
+```bash
+ npm install -y npm
+```
+
+### Execution du projet
+
+executer `npm istall` pour installer les differrentes dependances du projet
+
+- Il faut lancer le serveur :
+
+`npm start`
+
+- Il faut maintenant lancer le serveur de développement.
+
+`npm run serve`
 
 ## IV. Les tests :
