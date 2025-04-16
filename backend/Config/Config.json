@@ -1,0 +1,8 @@
+{
+    "database" :"Poudlard",
+    "username" :"dassist",
+    "password" :"ProjectPass59",
+    "host" :"localhost",
+    "port" :3306
+}
+
