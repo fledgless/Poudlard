@@ -1,0 +1,18 @@
+@startuml  Register
+
+left to right direction
+actor "utilisateur" as u
+rectangle Site {
+  usecase "naviguer" as UC1
+  usecase "creer un compte" as uc2
+}
+u --> UC1
+u -->uc2
+note right of (UC1)
+en tant qu'utilisateur je navigue sur les differentes pages web
+end note
+note right of (uc2)
+en tant qu'utilisateur j'aimerais creer un compte
+end note
+
+@enduml
