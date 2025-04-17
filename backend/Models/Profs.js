@@ -12,7 +12,6 @@ Profs.init(
     },
     id_Users: {
       type: DataTypes.STRING(50),
-      primaryKey: true,
       allowNull: false,
     //   references: {
     //     model: Users,
