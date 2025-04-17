@@ -13,22 +13,18 @@ Matiere.init(
     },
     nom: {
       type: DataTypes.STRING(255),
-      primaryKey: true,
       allowNull: false,
     },
     descriptif: {
       type: DataTypes.TEXT,
-      primaryKey: true,
       allowNull: false,
     },
     photo: {
       type: DataTypes.STRING(255),
-      primaryKey: true,
       allowNull: false,
     },
     id_profs: {
       type: DataTypes.STRING(50),
-      primaryKey: true,
       allowNull: false,
       references: {
         model: Profs,

@@ -16,7 +16,7 @@ const MatiereRoutes = require("./Routes/MatiereRoute");
 app.use("/matiere", MatiereRoutes);
 
 
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World! test ok, nous pouvons continuer !");
 });
 
@@ -28,4 +28,3 @@ app.listen(port, () => {
   console.log(`Votre serveur est lancé sur http://127.0.0.1:${port}`);
 });
 
-// app.listen(3002);
